@@ -12,9 +12,7 @@ services:
       - key: PORT
         value: 4000
       - key: MONGO_URI
-        fromDatabase:
-          name: civictrack-db
-          property: connectionString
+        sync: false
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_EXPIRES_IN
@@ -34,8 +32,4 @@ services:
       - key: VITE_API_URL
         value: https://civictrack-backend.onrender.com/api
 
-databases:
-  - name: civictrack-db
-    databaseName: civictrack
-    user: civictrack_user
-    plan: free
+# Database section removed - using external MongoDB Atlas connection
