@@ -30,4 +30,4 @@ services:
     rootDir: ./frontend
     envVars:
       - key: VITE_API_URL
-        value: https://civictrack-backend.onrender.com/api
+        value: https://civictrack-backend-otw5.onrender.com/api
