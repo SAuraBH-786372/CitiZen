@@ -1,0 +1,46 @@
+services:
+  - type: web
+    name: civictrack-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    rootDir: ./backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: MONGO_URI
+        fromDatabase:
+          name: civictrack-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_ORIGIN
+        fromService:
+          type: web
+          name: civictrack-frontend
+          property: url
+      - key: MAX_FILE_SIZE
+        value: 5242880
+
+  - type: web
+    name: civictrack-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    rootDir: ./frontend
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: civictrack-backend
+          property: url
+        value: /api
+
+databases:
+  - name: civictrack-db
+    databaseName: civictrack
+    user: civictrack_user

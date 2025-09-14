@@ -1,0 +1,384 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Mint Green Background System */
+  --background: 160 20% 98%;
+  --background-secondary: 160 25% 95%;
+  --background-tertiary: 160 30% 92%;
+  --foreground: 160 10% 10%;
+  
+  /* Clean White Card System */
+  --card: 0 0% 100%;
+  --card-secondary: 0 0% 98%;
+  --card-foreground: 220 15% 8%;
+  --card-border: 168 30% 85%;
+  
+  /* Popover System */
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 15% 8%;
+  
+  /* Purple Primary Colors - Matching the UI accent */
+  --primary: 262 83% 58%;
+  --primary-hover: 262 83% 53%;
+  --primary-active: 262 83% 48%;
+  --primary-foreground: 0 0% 100%;
+  --primary-light: 262 83% 85%;
+  --primary-dark: 262 83% 35%;
+  
+  /* Soft Gray Secondary Colors */
+  --secondary: 220 15% 94%;
+  --secondary-hover: 220 15% 90%;
+  --secondary-active: 220 15% 86%;
+  --secondary-foreground: 220 15% 15%;
+  
+  /* Mint Green Success Colors */
+  --success: 168 76% 42%;
+  --success-hover: 168 76% 37%;
+  --success-foreground: 0 0% 100%;
+  --success-light: 168 76% 85%;
+  
+  /* Coral Warning Colors */
+  --warning: 25 95% 53%;
+  --warning-hover: 25 95% 48%;
+  --warning-foreground: 0 0% 100%;
+  --warning-light: 25 95% 85%;
+  
+  /* Enhanced Muted System */
+  --muted: 220 15% 96%;
+  --muted-hover: 220 15% 92%;
+  --muted-foreground: 220 10% 45%;
+  
+  /* Teal Accent System */
+  --accent: 180 84% 45%;
+  --accent-hover: 180 84% 40%;
+  --accent-foreground: 0 0% 100%;
+  --accent-light: 180 84% 85%;
+  
+  /* Soft Red Destructive Colors */
+  --destructive: 0 84% 60%;
+  --destructive-hover: 0 84% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --destructive-light: 0 84% 85%;
+  
+  /* Soft Border System */
+  --border: 168 30% 85%;
+  --border-light: 168 30% 90%;
+  --border-strong: 168 30% 75%;
+  
+  /* Input System */
+  --input: 168 30% 90%;
+  --input-focus: 262 83% 58%;
+  
+  /* Ring System */
+  --ring: 262 83% 58%;
+  
+  /* Enhanced Radius System - More rounded like the UI */
+  --radius: 1rem;
+  --radius-sm: 0.75rem;
+  --radius-lg: 1.25rem;
+  
+  /* Multi-colored Status System */
+  --status-open: 217 91% 60%;
+  --status-progress: 25 95% 53%;
+  --status-resolved: 168 76% 42%;
+  --status-closed: 220 10% 45%;
+  
+  /* Avatar Color Palette - Multi-colored like the UI */
+  --avatar-1: 25 95% 53%;   /* Coral */
+  --avatar-2: 168 76% 42%;  /* Mint */
+  --avatar-3: 262 83% 58%;  /* Purple */
+  --avatar-4: 217 91% 60%;  /* Blue */
+  --avatar-5: 45 93% 47%;   /* Yellow */
+  --avatar-6: 340 82% 52%;  /* Pink */
+}
+
+.da:root {
+  /* Enhanced Background System - Light Default */
+  --background: 0 0% 100%;
+  --background-secondary: 160 15% 98%;
+  --background-tertiary: 160 10% 96%;
+  --foreground: 0 0% 3.9%;
+  
+  /* Enhanced Dark Card System */
+  --card: 220 15% 8%;
+  --card-secondary: 220 15% 10%;
+  --card-foreground: 220 15% 95%;
+  
+  /* Dark Popover System */
+  --popover: 220 15% 8%;
+  --popover-foreground: 220 15% 95%;
+  
+  /* Enhanced Dark Primary Colors */
+  --primary: 217 91% 65%;
+  --primary-hover: 217 91% 70%;
+  --primary-active: 217 91% 75%;
+  --primary-foreground: 220 15% 6%;
+  --primary-light: 217 91% 25%;
+  --primary-dark: 217 91% 85%;
+  
+  /* Enhanced Dark Secondary Colors */
+  --secondary: 220 15% 15%;
+  --secondary-hover: 220 15% 18%;
+  --secondary-active: 220 15% 22%;
+  --secondary-foreground: 220 15% 85%;
+  
+  /* Dark Success Colors */
+  --success: 142 71% 55%;
+  --success-hover: 142 71% 60%;
+  --success-foreground: 220 15% 6%;
+  --success-light: 142 71% 25%;
+  
+  /* Dark Warning Colors */
+  --warning: 38 92% 60%;
+  --warning-hover: 38 92% 65%;
+  --warning-foreground: 220 15% 6%;
+  --warning-light: 38 92% 25%;
+  
+  /* Enhanced Dark Muted System */
+  --muted: 220 15% 12%;
+  --muted-hover: 220 15% 15%;
+  --muted-foreground: 220 10% 65%;
+  
+  /* Enhanced Dark Accent System */
+  --accent: 262 83% 68%;
+  --accent-hover: 262 83% 73%;
+  --accent-foreground: 220 15% 6%;
+  --accent-light: 262 83% 25%;
+  
+  /* Enhanced Dark Destructive Colors */
+  --destructive: 0 84% 65%;
+  --destructive-hover: 0 84% 70%;
+  --destructive-foreground: 220 15% 6%;
+  --destructive-light: 0 84% 25%;
+  
+  /* Enhanced Dark Border System */
+  --border: 220 15% 18%;
+  --border-light: 220 15% 15%;
+  --border-strong: 220 15% 25%;
+  
+  /* Dark Input System */
+  --input: 220 15% 18%;
+  --input-focus: 217 91% 65%;
+  
+  /* Dark Ring System */
+  --ring: 217 91% 65%;
+  
+  /* Dark Status Colors */
+  --status-open: 217 91% 65%;
+  --status-progress: 38 92% 60%;
+  --status-resolved: 142 71% 55%;
+  --status-closed: 220 10% 65%;
+}
+
+html, body, #root { 
+  height: 100%; 
+}
+
+body { 
+  background: linear-gradient(135deg, 
+    hsl(280, 30%, 98%) 0%, 
+    hsl(320, 25%, 97%) 25%, 
+    hsl(30, 35%, 96%) 50%, 
+    hsl(50, 40%, 95%) 75%, 
+    hsl(160, 25%, 96%) 100%
+  );
+  min-height: 100vh;
+  color: hsl(var(--foreground));
+}
+
+/* Enhanced Modern UI Utility Classes */
+.glass-effect {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-modern {
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-modern:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.6);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Status Badge Variants */
+.status-open {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  border: none;
+}
+
+.status-in-progress {
+  background: linear-gradient(135deg, #feca57, #ff9ff3);
+  color: white;
+  border: none;
+}
+
+.status-resolved {
+  background: linear-gradient(135deg, #48cab2, #2dd4bf);
+  color: white;
+  border: none;
+}
+
+.status-closed {
+  background: linear-gradient(135deg, #a8a8a8, #8e8e8e);
+  color: white;
+  border: none;
+}
+
+/* Avatar Color Classes */
+.avatar-1 {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+}
+.avatar-2 {
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+  color: white;
+}
+.avatar-3 {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  color: #333;
+}
+.avatar-4 {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+.avatar-5 {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+}
+.avatar-6 {
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  color: #333;
+}
+
+/* Enhanced Interactive States */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hover-scale {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Smooth Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modern Interactive States */
+.interactive-scale {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.interactive-scale:active {
+  transform: scale(0.95);
+}
+
+.interactive-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interactive-glow:hover {
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+}
+.btn-pill {
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
