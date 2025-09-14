@@ -2,6 +2,7 @@ services:
   - type: web
     name: civictrack-backend
     env: node
+    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
     rootDir: ./backend
@@ -18,7 +19,6 @@ services:
         generateValue: true
       - key: JWT_EXPIRES_IN
         value: 7d
-      # You can set this manually after deployment if you need full URL
       - key: CLIENT_ORIGIN
         value: https://civictrack-frontend.onrender.com
       - key: MAX_FILE_SIZE
@@ -27,11 +27,11 @@ services:
   - type: web
     name: civictrack-frontend
     env: static
+    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     rootDir: ./frontend
     envVars:
-      # Don’t mix value and fromService
       - key: VITE_API_URL
         value: https://civictrack-backend.onrender.com/api
 
@@ -39,3 +39,4 @@ databases:
   - name: civictrack-db
     databaseName: civictrack
     user: civictrack_user
+    plan: free
