@@ -14,8 +14,11 @@ app.use(cors({ origin: ENV.CLIENT_ORIGIN }))
 app.use(express.json())
 app.use(morgan('dev'))
 
-// Serve static uploads from a path that works in dev (src) and prod (dist)
-app.use('/uploads', express.static(path.resolve(__dirname, '../uploads')))
+// Serve static uploads - handle both dev and production paths
+const uploadsPath = process.env.NODE_ENV === 'production' 
+  ? path.resolve(process.cwd(), 'uploads')
+  : path.resolve(__dirname, '../uploads')
+app.use('/uploads', express.static(uploadsPath))
 
 app.use('/api/auth', authRoutes)
 app.use('/api/issues', issueRoutes)

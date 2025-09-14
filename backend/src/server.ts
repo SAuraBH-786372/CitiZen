@@ -5,9 +5,12 @@ import { app } from './app'
 async function start() {
   try {
     await mongoose.connect(ENV.MONGO_URI)
-    app.listen(ENV.PORT, () => console.log(`API running on http://localhost:${ENV.PORT}`))
+    app.listen(ENV.PORT, '0.0.0.0', () => {
+      console.log(`API running on port ${ENV.PORT}`)
+      console.log(`Environment: ${process.env.NODE_ENV || 'development'}`)
+    })
   } catch (e) {
-    console.error('Failed to start', e)
+    console.error('Failed to start server:', e)
     process.exit(1)
   }
 }
