@@ -3,7 +3,7 @@ services:
     name: civictrack-backend
     env: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm install && npm run build
     startCommand: npm start
     rootDir: ./backend
     envVars:
@@ -21,7 +21,7 @@ services:
   - type: web
     name: civictrack-frontend
     env: static
-    buildCommand: npm ci && npm run build
+    buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     rootDir: ./frontend
     envVars:
