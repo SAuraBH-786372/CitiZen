@@ -18,11 +18,9 @@ services:
         generateValue: true
       - key: JWT_EXPIRES_IN
         value: 7d
+      # You can set this manually after deployment if you need full URL
       - key: CLIENT_ORIGIN
-        fromService:
-          type: web
-          name: civictrack-frontend
-          property: url
+        value: https://civictrack-frontend.onrender.com
       - key: MAX_FILE_SIZE
         value: 5242880
 
@@ -33,12 +31,9 @@ services:
     staticPublishPath: ./dist
     rootDir: ./frontend
     envVars:
+      # Don’t mix value and fromService
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: civictrack-backend
-          property: url
-        value: /api
+        value: https://civictrack-backend.onrender.com/api
 
 databases:
   - name: civictrack-db
