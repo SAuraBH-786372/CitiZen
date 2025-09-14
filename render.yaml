@@ -9,10 +9,6 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 4000
-      - key: MONGO_URI
-        sync: false
       - key: JWT_SECRET
         generateValue: true
       - key: JWT_EXPIRES_IN
@@ -25,11 +21,10 @@ services:
   - type: web
     name: civictrack-frontend
     env: static
+    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     rootDir: ./frontend
     envVars:
       - key: VITE_API_URL
         value: https://civictrack-backend.onrender.com/api
-
-# Database section removed - using external MongoDB Atlas connection
